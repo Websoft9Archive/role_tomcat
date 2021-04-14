@@ -9,6 +9,6 @@ tomcat_metadata:
   "7":
     release: "7.0.108"
   "8":
-    release: "8.5.64"
+    release: "8.5.65"
   "9":
-    release: "9.0.44"
+    release: "9.0.45"
