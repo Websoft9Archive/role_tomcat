@@ -44,3 +44,8 @@
     name: tomcat
     enabled: yes
     state: started
+
+# check version
+- name: Check tomcat version
+  shell: >
+    sudo echo $(/usr/local/tomcat/bin/version.sh |grep -i "Server version") |sudo tee -a /data/logs/install_version.txt 
