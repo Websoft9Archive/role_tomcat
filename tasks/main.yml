@@ -16,6 +16,14 @@
     chdir: /usr/local/tomcat/bin/
     warn: false
 
+- name: Config java and tomcat env
+  blockinfile:
+    path: /usr/local/tomcat/bin/catalina.sh
+    insertafter: "^# OS specific support"
+    block: |
+      CATALINA_HOME=/usr/local/tomcat
+      JAVA_HOME=/usr/lib/jvm/java
+  
 - name: config tomcat service
   copy:
     src: tomcat.service
@@ -28,16 +36,8 @@
     dest: /lib/systemd/system/tomcat.service
   when: ansible_os_family == 'Debian'
 
-
-- name: Config tomcat
-  copy:
-    src: server.xml
-    dest: /usr/local/tomcat/conf/server.xml
-
-- name: Create dir
-  file:
-    path: /data/wwwroot/
-    state: directory
+- name: Set softlink on websoft9 workdir
+  shell: ln -sf /usr/local/tomcat/webapps /data/wwwroot
 
 - name: Start Tomcat
   service:
