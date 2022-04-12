@@ -1,0 +1,11 @@
+tomcat_release: "{{tomcat_metadata[tomcat_version].release}}"
+tomcat_url: https://downloads.apache.org/tomcat/tomcat-{{tomcat_version}}/v{{tomcat_release}}/bin/apache-tomcat-{{tomcat_release}}.zip
+
+#tomcat version manage by tomcat update
+tomcat_metadata: 
+  "10":
+    release: "10.0.16"
+  "8":
+    release: "8.5.75"
+  "9":
+    release: "9.0.58"
