@@ -4,7 +4,7 @@ tomcat_url: https://downloads.apache.org/tomcat/tomcat-{{tomcat_version}}/v{{tom
 #tomcat version manage by tomcat update
 tomcat_metadata: 
   "10":
-    release: "10.0.16"
+    release: "10.1.1"
   "8":
     release: "8.5.75"
   "9":
